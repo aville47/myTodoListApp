@@ -10,5 +10,15 @@
               <mat-icon>remove_red_eye</mat-icon>
             </button>
           </div>
+          <div style="float: right;">
+            <button mat-button  [routerLink]="['/edit', todo.id]">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div style="float: right;">
+            <button mat-button (click)="deleteTodo(todo.id)" type="button">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
     </mat-card-content>
 </mat-card>

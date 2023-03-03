@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetailTodoComponent } from './CRUD/detail-todo/detail-todo.component';
 import { AddTodoComponent } from './CRUD/add-todo/add-todo.component';
 import { MenuTodoComponent } from './Shared/menu-todo/menu-todo.component';
+import { EditTodoComponent } from './CRUD/edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MenuTodoComponent } from './Shared/menu-todo/menu-todo.component';
     ListTodoComponent,
     DetailTodoComponent,
     AddTodoComponent,
-    MenuTodoComponent
+    MenuTodoComponent,
+    EditTodoComponent
   ],
   imports: [
     BrowserModule,

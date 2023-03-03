@@ -29,4 +29,13 @@ export class ListTodoComponent implements OnInit {
     this.router.navigate(['todo', idTodo]);
   }
 
+  deleteTodo(id:number) {
+    this.todoService.deleteTodo(id).subscribe(data => {
+      console.log(data);
+      this.todos = this.todos.filter(todo => {
+        return todo.id != id;
+      })
+    })
+  }
+
 }
