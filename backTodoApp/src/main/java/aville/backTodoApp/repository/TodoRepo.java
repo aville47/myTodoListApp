@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface TodoRepo extends JpaRepository<Todo, Long> {
 
-    @Query(value="Select * from to_do order by created_at desc",nativeQuery = true)
+    @Query(value="Select * from todo order by created_at desc",nativeQuery = true)
     public List<Todo> getAllTodoCreatedAtDesc();
 
 }
