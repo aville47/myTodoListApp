@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+mat-toolbar {
+    background-color: #1E90FF;
+    color: white;
+    padding: 10px;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-top: 5px;
+  }

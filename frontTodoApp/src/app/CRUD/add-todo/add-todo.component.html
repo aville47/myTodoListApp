@@ -1,0 +1,30 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>New Todo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" [(ngModel)] = "todo.title" name="title">
+            </mat-form-field>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Description</mat-label>
+                        <textarea matInput #message maxlength="256" placeholder="Description" [(ngModel)] = "todo.description" name="description"></textarea>
+                        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                    </mat-form-field>
+            </div>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button  mat-raised-button color="primary" class="example-icon" (click) = "saveTodo()">
+            <mat-icon>save</mat-icon>
+            &nbsp;Save
+        </button>
+        <button  mat-raised-button color="warn" class="example-icon" (click) = "cancel()">
+            <mat-icon>clear</mat-icon>
+            &nbsp;Cancel
+        </button>
+    </mat-card-actions>
+</mat-card>

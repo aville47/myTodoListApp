@@ -16,13 +16,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetailTodoComponent } from './CRUD/detail-todo/detail-todo.component';
+import { AddTodoComponent } from './CRUD/add-todo/add-todo.component';
+import { MenuTodoComponent } from './Shared/menu-todo/menu-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListTodoComponent,
-    DetailTodoComponent
+    DetailTodoComponent,
+    AddTodoComponent,
+    MenuTodoComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { DetailTodoComponent } from './CRUD/detail-todo/detail-todo.component';
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],

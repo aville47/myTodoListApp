@@ -19,4 +19,8 @@ export class TodoService {
   getTodoList() : Observable <Todo[]> {
     return this.httpTodo.get<Todo[]>(`${this.apiURL}`);
   }
+
+  createTodo(todo : Todo): Observable<any> {
+    return this.httpTodo.post(`${this.apiURL}`, todo);
+  }
 }
