@@ -1,9 +1,9 @@
-.example-spacer {
+.spacer {
     flex: 1 1 auto;
   }
 
 mat-toolbar {
-    background-color: #1E90FF;
+    background-color: black;
     color: white;
     padding: 10px;
 }
@@ -15,3 +15,7 @@ mat-toolbar {
     font-weight: bold;
     padding-top: 5px;
   }
+
+  .icon:hover {
+    color: darkgray;
+}

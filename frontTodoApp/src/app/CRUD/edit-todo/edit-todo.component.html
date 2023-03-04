@@ -1,9 +1,9 @@
-<mat-card class="example-card">
+<mat-card>
     <mat-card-header>
       <mat-card-title>Edit Todo</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <form class="example-form" (ngSubmit)="updateTodo()" #todoForm="ngForm">
+        <form (ngSubmit)="updateTodo()" #todoForm="ngForm">
             <mat-form-field appearance="fill">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="Title" [(ngModel)] = "todo.title" name="title">
@@ -20,7 +20,7 @@
     <mat-card-actions>
         <button  mat-raised-button color="primary" class="example-icon" (click) = "updateTodo()">
             <mat-icon>save</mat-icon>
-            &nbsp;Save
+            &nbsp;Update
         </button>
         <button  mat-raised-button color="warn" class="example-icon" (click) = "cancel()">
             <mat-icon>clear</mat-icon>

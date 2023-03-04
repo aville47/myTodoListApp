@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/Service/todo.service';
 })
 export class ListTodoComponent implements OnInit {
   
-  todos: Todo[] = [];
+  private todos: Todo[] = [];
 
   constructor(private todoService: TodoService, private router: Router) {}
   
@@ -23,6 +23,26 @@ export class ListTodoComponent implements OnInit {
     this.todoService.getTodoList().subscribe(data => {
       this.todos = data;
     })
+  }
+
+  get todosNotCompleted () : Todo[] {
+    return this.todos.filter(todo => !todo.isCompleted);
+  }
+
+  get todosCompleted() : Todo[] {
+    return this.todos.filter(todo => todo.isCompleted);
+  }
+
+  get countTodos() : number {
+    return this.todos.length;
+  }
+
+  get countCompleted() : number {
+    return this.todosCompleted.length;
+  }
+
+  get isHidden() : boolean {
+    return this.countCompleted === 0;
   }
 
   goToDetailTodo(idTodo:number) {

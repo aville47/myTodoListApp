@@ -6,7 +6,7 @@
 
 mat-form-field {
     height: 80px;
-    width: 80%;
+    width: 90%;
 }
 
 button {
@@ -20,3 +20,8 @@ form {
 .example-full-width {
     height: 100px;
 }
+
+mat-card {
+    margin: 50px 200px;
+    padding: 20px;
+  }

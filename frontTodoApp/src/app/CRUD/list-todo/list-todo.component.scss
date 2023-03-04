@@ -1,19 +1,37 @@
-.example-header-image {
-    background-image: url('../../../assets/img/todo.jpg');
-    background-size: cover;
+  mat-card {
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 10px;
   }
 
-.example-full-width {
-    height: 70px;
-    width: 80%;
-}
+  mat-card-header {
+    display: flex;
+    justify-content: center;
+  }
 
-.addButton {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
+  mat-card-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 
-form {
-    margin-left: 100px;
-}
+  mat-card-content {
+    margin-top: 20px;
+  }
 
+  .delete {
+    color: red;
+  }
+
+  .edit {
+    color: green;
+  }
+
+  .detail {
+    color: blue;
+  }
+
+  .completed {
+    text-decoration: line-through;
+  }
