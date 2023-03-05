@@ -15,7 +15,10 @@ export class DetailTodoComponent implements OnInit {
   todo: Todo = new Todo();
   idTodo!:number;
   
-  constructor(private todoService: TodoService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private todoService: TodoService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.idTodo = this.activatedRoute.snapshot.params['id'];

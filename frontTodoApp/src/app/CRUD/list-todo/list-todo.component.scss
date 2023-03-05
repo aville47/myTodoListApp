@@ -8,30 +8,48 @@
 
   mat-card-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    
   }
 
   mat-card-title {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: left;
   }
 
   mat-card-content {
     margin-top: 20px;
   }
 
-  .delete {
-    color: red;
-  }
-
-  .edit {
-    color: green;
-  }
-
-  .detail {
-    color: blue;
-  }
-
   .completed {
     text-decoration: line-through;
+  }
+
+  .search {
+    background: white;
+    color: black;
+    border: none;
+  }
+
+  .form-outline {
+    margin-right: 10px;
+  }
+
+  .search:hover {
+    color: grey;
+  }
+
+  mat-accordion {
+    margin-top: 20px;
+  }
+
+  mat-expansion-panel-header {
+    margin: 2px;
+    height: 40px;
+  }
+
+  .expansion {
+    margin: 0;
   }

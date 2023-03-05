@@ -1,11 +1,20 @@
-<div class="card-wraooe">
+<div class="card-wrap">
   <mat-card>
     <mat-card-header>
       <mat-card-title>My Todo List</mat-card-title>
-      <mat-card-subtitle>You have {{ countTodos }} todos left </mat-card-subtitle>
+      <mat-card-content>
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="text" id="search" class="form-control" placeholder="search a todo..." [(ngModel)]="search" autocomplete="off" />
+          </div>
+          <span class="btn search">
+            <mat-icon>search</mat-icon>
+          </span>
+        </div>
+      </mat-card-content>
     </mat-card-header>
     <mat-divider></mat-divider>
-    <mat-card-content *ngFor = "let todo of todosNotCompleted">
+    <mat-card-content *ngFor = "let todo of todosNotCompleted | filter:search">
         <mat-checkbox [(ngModel)]="todo.isCompleted"><span class="todo-title" [ngClass]="todo.isCompleted ? 'completed' : ''">{{todo.title}}</span></mat-checkbox>
         <div style="float: right;">
           <button mat-button (click)="deleteTodo(todo.id)" type="button">
@@ -23,35 +32,23 @@
           </button>
         </div>
     </mat-card-content>
-
     <mat-accordion [hidden]="isHidden">
       <mat-expansion-panel>
           <mat-expansion-panel-header>
               <mat-panel-title>
-                  Terminée(s) {{ countCompleted}}
+                  Finished ({{ countCompleted}})
               </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-card-content *ngFor="let todo of todosCompleted">
+          <mat-card-content *ngFor="let todo of todosCompleted" class="expansion">
             <mat-checkbox [(ngModel)]="todo.isCompleted"><span class="todo-title" [ngClass]="todo.isCompleted ? 'completed' : ''">{{todo.title}}</span></mat-checkbox>
             <div style="float: right;">
               <button mat-button (click)="deleteTodo(todo.id)" type="button">
                 <mat-icon class="delete">delete</mat-icon>
               </button>
             </div>
-            <div style="float: right;">
-              <button mat-button  [routerLink]="['/edit', todo.id]">
-                <mat-icon class="edit">edit</mat-icon>
-              </button>
-            </div>
-            <div style="float: right;">
-              <button mat-button  (click)="goToDetailTodo(todo.id)">
-                <mat-icon class="detail">remove_red_eye</mat-icon>
-              </button>
-            </div>
         </mat-card-content>
       </mat-expansion-panel>
-  </mat-accordion>
-
+    </mat-accordion>
   </mat-card>
 </div>
 

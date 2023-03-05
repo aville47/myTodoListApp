@@ -1,28 +1,28 @@
-<mat-card class="example-card">
+<mat-card class="card">
     <mat-card-header>
       <mat-card-title>New Todo</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <form class="example-form">
+        <form class="form">
             <mat-form-field appearance="fill">
                 <mat-label>Title</mat-label>
-                <input matInput placeholder="Title" [(ngModel)] = "todo.title" name="title">
+                <input matInput placeholder="Title" [(ngModel)] = "todo.title" name="title" required>
             </mat-form-field>
             <div>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="full-width">
                     <mat-label>Description</mat-label>
                         <textarea matInput #message maxlength="256" placeholder="Description" [(ngModel)] = "todo.description" name="description"></textarea>
                         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-                    </mat-form-field>
+                </mat-form-field>
             </div>
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button  mat-raised-button color="primary" class="example-icon" (click) = "saveTodo()">
+        <button  mat-raised-button color="primary" class="save" (click) = "saveTodo()">
             <mat-icon>save</mat-icon>
             &nbsp;Save
         </button>
-        <button  mat-raised-button color="warn" class="example-icon" (click) = "cancel()">
+        <button  mat-raised-button color="warn" class="icon" (click) = "cancel()">
             <mat-icon>clear</mat-icon>
             &nbsp;Cancel
         </button>

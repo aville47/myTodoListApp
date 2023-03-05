@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 // Component todoApp
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,6 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
-
 
 @NgModule({
   declarations: [
@@ -58,6 +58,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     NgbModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Todo } from 'src/app/Model/todo';
 import { TodoService } from 'src/app/Service/todo.service';
@@ -8,25 +8,18 @@ import { TodoService } from 'src/app/Service/todo.service';
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.scss']
 })
-export class AddTodoComponent implements OnInit {
+export class AddTodoComponent {
 
-  errors: string[] | undefined;
   todo: Todo = new Todo();
 
-  constructor(public todoService: TodoService,
+  constructor(
+    public todoService: TodoService,
     public router: Router) {}
 
-    ngOnInit(): void {
-    }
-
     saveTodo() {
-      this.errors = [];
       this.todoService.createTodo(this.todo)
       .subscribe(data => {
         this.router.navigate(['todos']);
-      },
-      error => {
-        this.errors = error.error.errors;
       });
     }
 

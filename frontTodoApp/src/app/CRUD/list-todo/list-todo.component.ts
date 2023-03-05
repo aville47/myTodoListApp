@@ -11,8 +11,11 @@ import { TodoService } from 'src/app/Service/todo.service';
 export class ListTodoComponent implements OnInit {
   
   private todos: Todo[] = [];
-
-  constructor(private todoService: TodoService, private router: Router) {}
+  search:any;
+  
+  constructor(
+    private todoService: TodoService, 
+    private router: Router) {}
   
   
   ngOnInit(): void {
@@ -24,7 +27,19 @@ export class ListTodoComponent implements OnInit {
       this.todos = data;
     })
   }
+  goToDetailTodo(idTodo:number) {
+    this.router.navigate(['todo', idTodo]);
+  }
 
+  deleteTodo(id:number) {
+    this.todoService.deleteTodo(id).subscribe(data => {
+      console.log(data);
+      this.todos = this.todos.filter(todo => {
+        return todo.id != id;
+      })
+    })
+  }
+ 
   get todosNotCompleted () : Todo[] {
     return this.todos.filter(todo => !todo.isCompleted);
   }
@@ -43,19 +58,6 @@ export class ListTodoComponent implements OnInit {
 
   get isHidden() : boolean {
     return this.countCompleted === 0;
-  }
-
-  goToDetailTodo(idTodo:number) {
-    this.router.navigate(['todo', idTodo]);
-  }
-
-  deleteTodo(id:number) {
-    this.todoService.deleteTodo(id).subscribe(data => {
-      console.log(data);
-      this.todos = this.todos.filter(todo => {
-        return todo.id != id;
-      })
-    })
   }
 
 }

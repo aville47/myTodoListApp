@@ -11,7 +11,7 @@ form {
     margin-left: 150px;
 }
 
-.example-full-width {
+.full-width {
     height: 100px;
 }
 
@@ -19,3 +19,14 @@ mat-card {
     margin: 50px 200px;
     padding: 20px;
   }
+
+
+mat-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+mat-card-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}

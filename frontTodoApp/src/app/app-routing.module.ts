@@ -7,7 +7,6 @@ import { ListTodoComponent } from './CRUD/list-todo/list-todo.component';
 import { HomeTodoComponent } from './Shared/home-todo/home-todo.component';
 
 const routes: Routes = [
-
   { path: 'home', component: HomeTodoComponent},
   { path: 'todos', component: ListTodoComponent },
   { path: 'todo/:id', component: DetailTodoComponent },
@@ -15,6 +14,9 @@ const routes: Routes = [
   { path: "edit/:id", component : EditTodoComponent },
   { path: "", redirectTo: "home", pathMatch: "full" }
 
+  /*
+  TODO Create an error path and an error component
+  */
 ];
 
 @NgModule({

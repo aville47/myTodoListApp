@@ -13,7 +13,10 @@ export class EditTodoComponent implements OnInit {
   public idTodo!:number;
   public todo: Todo = new Todo();
 
-  constructor(private todoService: TodoService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private todoService: TodoService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.idTodo = this.activatedRoute.snapshot.params['id'];
