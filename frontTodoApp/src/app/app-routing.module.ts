@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'todo/:id', component: DetailTodoComponent },
   { path: 'add', component: AddTodoComponent},
   { path: "edit/:id", component : EditTodoComponent },
-  { path: "", redirectTo: "home", pathMatch: "full" }
+  { path: "**", redirectTo: "home", pathMatch: "full" }
 
   /*
   TODO Create an error path and an error component
